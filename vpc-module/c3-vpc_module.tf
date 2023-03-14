@@ -11,9 +11,11 @@ module "vpc" {
   azs                           = var.availability_zones
   public_subnets                = var.vpc_public_subnets_cidr
   private_subnets               = var.vpc_private_subnets_cidr
-  elasticache_subnets           = var.vpc_elasticache_subnets_cidr
   intra_subnets                 = var.vpc_intra_subnets_cidr
-  #private_subnet_suffix         = "frontend"
+  elasticache_subnets           = var.vpc_elasticache_subnets_cidr
+  
+  private_subnet_suffix         = "frontend"
+  intra_subnet_suffix           = "backend"
   
 
   # Database Subnets
@@ -43,7 +45,7 @@ module "vpc" {
   }
 
   intra_subnet_tags = {
-    Type = "intrasubnets"
+    Type = "intra-subnets"
   }
 
   database_subnet_tags = {
