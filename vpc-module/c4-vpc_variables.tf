@@ -22,9 +22,16 @@ variable "vpc_public_subnets_cidr" {
   type          = list(string)
 }
 
+
 # VPC private subnets cidr
 variable "vpc_private_subnets_cidr" {
   description   = "My VPC private subnets cidr"
+  type          = list(string)
+}
+
+# VPC intra subnets cidr
+variable "vpc_intra_subnets_cidr" {
+  description   = "My VPC intra subnets cidr"
   type          = list(string)
 }
 

@@ -12,6 +12,7 @@ module "vpc" {
   public_subnets                = var.vpc_public_subnets_cidr
   private_subnets               = var.vpc_private_subnets_cidr
   elasticache_subnets           = var.vpc_elasticache_subnets_cidr
+  intra_subnets                 = var.vpc_intra_subnets_cidr
   #private_subnet_suffix         = "frontend"
   
 
@@ -39,6 +40,10 @@ module "vpc" {
 
   private_subnet_tags = {
     Type = "private-subnets"
+  }
+
+  intra_subnet_tags = {
+    Type = "intrasubnets"
   }
 
   database_subnet_tags = {
